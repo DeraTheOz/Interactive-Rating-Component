@@ -1,0 +1,51 @@
+/* 791px- 49.43em */
+@media screen and (max-width: 49.43em) {
+	.rating__container {
+		padding: 3rem 2.4rem;
+	}
+
+	.star {
+		width: 4rem;
+		height: 4rem;
+	}
+
+	.rating__header {
+		font-size: 2.4rem;
+		max-width: 27.9rem;
+		line-height: 1.2;
+	}
+
+	.rating__summary {
+		max-width: 27.9rem;
+		font-size: 1.4rem;
+		line-height: 1.7;
+	}
+
+	.rating__scale {
+		max-width: 28.1rem;
+		font-size: 1.4rem;
+		font-weight: 700;
+	}
+
+	.scale-num {
+		width: 4.2rem;
+		height: 4.2rem;
+	}
+
+	.btn {
+		font-size: 1.4rem;
+		font-weight: 700;
+		letter-spacing: 1.87px;
+	}
+
+	.rating__success {
+		padding: 3.4rem 2.4rem;
+	}
+
+	.rating__feedback-text {
+		max-width: 16.8rem;
+		font-size: 1.4rem;
+		padding: 0.6rem 0;
+		border-radius: 2.25rem;
+	}
+}
