@@ -1,3 +1,5 @@
+'use strict';
+
 // Elements
 const ratingContainer = document.querySelector('.rating__container');
 const ratingScores = document.querySelectorAll('.scale-num');
@@ -14,6 +16,7 @@ ratingScores.forEach(function (score) {
 	score.addEventListener('click', function () {
 		// Remove 'clicked' class
 		ratingScores.forEach(num => num.classList.remove('clicked'));
+
 		// Add the 'clicked' class
 		this.classList.add('clicked');
 
@@ -33,7 +36,7 @@ button.addEventListener('click', function (e) {
 		// add success message
 		hiddenSuccessMessage.classList.add('rating__success');
 
-		// update success message selection text
+		// update success message feedback text
 		ratingFeedback.textContent = `You selected ${ratingClicked.textContent} out of
 		${ratingScores.length}`;
 
@@ -45,11 +48,14 @@ button.addEventListener('click', function (e) {
 	}
 });
 
-// Remove success message
+// Listen for click events on document
 document.addEventListener('click', e => {
 	if (!ratingContainer.contains(e.target)) {
-		// remove success message modal
+		// remove success message
 		hiddenSuccessMessage.classList.remove('rating__success');
+
+		// Reset ratingScores to default state
+		ratingScores.forEach(num => num.classList.remove('clicked'));
 
 		// add rating container
 		ratingContainer.style.opacity = 100;
