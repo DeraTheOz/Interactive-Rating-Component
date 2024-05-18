@@ -1,7 +1,7 @@
 // Elements
 const ratingContainer = document.querySelector('.rating__container');
 const successMessage = document.querySelector('.rating__success');
-const ratingScore = document.querySelectorAll('.scale-num');
+const ratingScores = document.querySelectorAll('.scale-num');
 const button = document.querySelector('.btn');
 const ratingFeedback = document.querySelector('.rating__feedback-text');
 
@@ -9,14 +9,18 @@ const ratingFeedback = document.querySelector('.rating__feedback-text');
 let ratingClicked;
 
 // Handling Rating Selection
-ratingScore.forEach(function (score) {
+ratingScores.forEach(function (score) {
 	// Event listener
-	score.addEventListener('click', () => {
+	score.addEventListener('click', function () {
+		ratingScores.forEach(num => num.classList.remove('clicked'));
+		console.log(score);
 		// Add the clicked class
-		score.classList.add('clicked');
+		// this.classList.add('clicked');
+		console.log(this);
 
 		// Update event if any rating is clicked
 		ratingClicked = score;
+		console.log(ratingClicked);
 	});
 });
 
@@ -32,7 +36,8 @@ button.addEventListener('click', function (e) {
 		successMessage.classList.add('hidden');
 
 		// update success message selection text
-		ratingFeedback.textContent = `You selected ${ratingClicked.textContent} out of ${ratingScore.length}`;
+		ratingFeedback.textContent = `You selected ${ratingClicked.textContent} out of
+		${ratingScores.length}`;
 
 		// Reset rating
 		ratingClicked = false;
