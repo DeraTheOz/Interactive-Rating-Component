@@ -138,7 +138,7 @@ body {
 }
 
 /* Success message */
-.rating__success {
+.hidden {
 	max-width: 41.2rem;
 	min-width: 32.7rem;
 	max-height: 41.6rem;
@@ -176,7 +176,7 @@ body {
 }
 
 /* Add from Js */
-.hidden {
+.rating__success {
 	opacity: 1;
 	visibility: visible;
 	pointer-events: auto;
