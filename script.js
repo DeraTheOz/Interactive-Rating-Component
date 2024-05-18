@@ -1,7 +1,7 @@
 // Elements
 const ratingContainer = document.querySelector('.rating__container');
-const successMessage = document.querySelector('.rating__success');
 const ratingScores = document.querySelectorAll('.scale-num');
+const hiddenSuccessMessage = document.querySelector('.hidden');
 const button = document.querySelector('.btn');
 const ratingFeedback = document.querySelector('.rating__feedback-text');
 
@@ -19,8 +19,6 @@ ratingScores.forEach(function (score) {
 
 		// Update event if any rating is clicked
 		ratingClicked = this;
-		console.log(ratingClicked);
-	console.log(ratingScores);
 	});
 });
 
@@ -33,7 +31,7 @@ button.addEventListener('click', function (e) {
 		ratingContainer.style.opacity = 0;
 
 		// add success message
-		successMessage.classList.add('hidden');
+		hiddenSuccessMessage.classList.add('rating__success');
 
 		// update success message selection text
 		ratingFeedback.textContent = `You selected ${ratingClicked.textContent} out of
@@ -51,7 +49,7 @@ button.addEventListener('click', function (e) {
 document.addEventListener('click', e => {
 	if (!ratingContainer.contains(e.target)) {
 		// remove success message modal
-		successMessage.classList.remove('hidden');
+		hiddenSuccessMessage.classList.remove('rating__success');
 
 		// add rating container
 		ratingContainer.style.opacity = 100;
