@@ -12,15 +12,15 @@ let ratingClicked;
 ratingScores.forEach(function (score) {
 	// Event listener
 	score.addEventListener('click', function () {
+		// Remove 'clicked' class
 		ratingScores.forEach(num => num.classList.remove('clicked'));
-		console.log(score);
-		// Add the clicked class
-		// this.classList.add('clicked');
-		console.log(this);
+		// Add the 'clicked' class
+		this.classList.add('clicked');
 
 		// Update event if any rating is clicked
-		ratingClicked = score;
+		ratingClicked = this;
 		console.log(ratingClicked);
+	console.log(ratingScores);
 	});
 });
 
